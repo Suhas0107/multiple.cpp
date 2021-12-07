@@ -1,0 +1,62 @@
+#include"iostream"
+using namespace std;
+class king
+{
+    char name[15];
+    int age;
+    public: void get()
+            {
+                cout<<"Name"<<endl;
+                cin>>name;
+                cout<<"Age"<<endl;
+                cin>>age;
+            }
+            void put()
+            {
+                cout<<name<endl;
+                cout<<age<<endl;
+            }
+};
+class queen 
+{
+    int weight,height;
+    public: void getdata()
+            {
+                cout<<"Enter weight and height"<<endl;
+                cin>>weight>>height;
+            }
+            void putdata()
+            {
+                cout<<weight<<endl;
+                cout<<height<<endl;
+            }
+};
+class prince: public king, public queen
+{
+    char skill[10];
+    public: void read()
+            {
+                king::get();
+                queen::getdata();
+                cout<<"skill"<<endl;
+                cin>>skill;
+            }
+            void display()
+            {
+                king::put();
+                queen::putdata();
+                cout<<skill<<endl;
+            }
+};
+int main()
+{
+    prince p;
+    cout<<"Enter info"<<endl;
+    p.read();
+    cout<<"Entered info is"<<endl;
+    p.display();
+    return 0;
+}
+
+            
+                
